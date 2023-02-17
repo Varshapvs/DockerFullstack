@@ -2,7 +2,7 @@ FROM openjdk:17-jdk-slim-buster
 
 WORKDIR /Springboot
 COPY . .
-CMD gradlew.bat clean build
+RUN gradlew.bat clean build
 
 VOLUME /tmp
 EXPOSE 8081
