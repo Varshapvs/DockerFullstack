@@ -19,7 +19,7 @@ services:
     image: adminer
     restart: always
     ports:
-      - 8080:8080
+      - '8080:8080'
   
   springboot:
     build:
@@ -28,9 +28,9 @@ services:
       args:
         API_BASE_URL: http://127.0.0.1:8081/
     ports:
-      - 8081:8081
-     environment:
-     SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/testapp?autoReconnect=true&useSSL=false 
+      - '8081:8081'
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/testapp?autoReconnect=true&useSSL=false
     depends_on:
       - db
     networks:
