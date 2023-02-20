@@ -18,7 +18,7 @@ services:
     image: adminer
     restart: always
     ports:
-      - '7070:7070'
+      - '8080:8080'
   
   springboot:
     depends_on:
