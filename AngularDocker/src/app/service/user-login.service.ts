@@ -7,7 +7,8 @@ import { UserLogin } from '../commons/user-login';
   providedIn: 'root'
 })
 export class UserLoginService {
-  private baseURL="http://localhost:8081/login/";
+//   private baseURL="http://localhost:8081/login/";
+  private baseURL = window["cfgApiBaseUrl"] + "/login";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,11 +17,11 @@ export class UserLoginService {
     const searchUrl =`${this.baseURL}getAllDetails`
     return this.httpClient.get<UserLogin[]>(searchUrl).pipe(
       map(response => response)
-      
-    );    
-  
+
+    );
+
   }
-  
+
 
 
 
